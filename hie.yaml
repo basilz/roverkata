@@ -1,0 +1,8 @@
+cradle:
+  cabal:
+    - path: "./src"
+      component: "rover:lib"
+    - path: "./exe"
+      component: "rover:exe:rover-exe"
+    - path: "./test/Spec.hs"
+      component: "rover:test:rover-test"

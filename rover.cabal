@@ -1,0 +1,64 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 954d648131603a08107115a4b5d0ae8bb1c3bbc66de709e560d32d94e20bef2d
+
+name:           rover
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/rover#readme>
+homepage:       https://github.com/basilz/rover#readme
+bug-reports:    https://github.com/basilz/rover/issues
+author:         Andrea Basile
+maintainer:     example@example.com
+copyright:      2021 Andrea Basile
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/basilz/rover
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_rover
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+     ,transformers
+  default-language: Haskell2010
+
+executable rover-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_rover
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , rover
+  default-language: Haskell2010
+
+test-suite rover-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_rover
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , rover
+    , hspec
+  default-language: Haskell2010
